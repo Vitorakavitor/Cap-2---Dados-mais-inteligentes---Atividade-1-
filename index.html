@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teste do método window.alert()</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form
+      name="formCadastro"
+      onsubmit="return validarFormulario()"
+      method="post"
+    >
+      <label for="nome">Informe o seu Nome:</label>
+      <input type="text" name="nome" />
+      <input type="submit" value="Enviar" />
+    </form>
+    <script>
+      function validarFormulario() {
+        var nomePessoa = document.forms['formCadastro']['nome'].value
+        if (nomePessoa == '') {
+          alert('Favor informar o seu nome!')
+          return false
+        } else {
+          alert('Olá, ' + nomePessoa + ' !')
+          return true
+        }
+      }
+
+      var texto =
+        'Roteiros para *São Paulo* A Terra da Garoa! - Fundada em 25 de janeiro de 1554 a cidade tem hoje cerca de 12 milhões de habitantes e é considerada o centro financeiro do Brasil e aqui vão 3 dicas de roteiros obrigatórios para aqueles que passam pela capital paulista | #Roteiro A | Região: Avenida Paulista: MASP; Parque Trianon; Rua Augusta #Roteiro B  | George Lucas;Guerra nas estrelas - Episódio V - O Império Contra-Ataca | 1980 | Irvin Kershner;Guerra nas estrelas - Episódio VI - O Retorno de Jedi | 1983 | Richard Marquand'
+
+      var filmes = texto.split(';')
+      //armazenando os dados do primeiro filme nas variáveis
+      var titulo1 = filmes[0].split(' | ')[0]
+      var lancamento1 = filmes[0].split(' | ')[1]
+      var diretor1 = filmes[0].split(' | ')[2]
+      var periodo1 = 2022 - lancamento1
+      //armazenando os dados do segundo filme nas variáveis
+      var titulo2 = filmes[1].split(' | ')[0]
+      var lancamento2 = filmes[1].split(' | ')[1]
+      var diretor2 = filmes[1].split(' | ')[2]
+      var periodo2 = 2022 - lancamento2
+      //armazenando os dados do terceiro filme nas variáveis
+      var titulo3 = filmes[2].split(' | ')[0]
+      var lancamento3 = filmes[2].split(' | ')[1]
+      var diretor3 = filmes[2].split(' | ')[2]
+      var periodo3 = 2022 - lancamento3
+      //exibindo as mensagens:
+      alert(
+        `${titulo1}, dirigido por ${diretor1}, segue o  ${lancamento1} e completa ${periodo1} anos em 2022!`
+      )
+      alert(
+        `${titulo2}, dirigido por ${diretor2}, foi lançado em ${lancamento2} e completa ${periodo2} anos em 2022!`
+      )
+      alert(
+        `${titulo3}, dirigido por ${diretor3}, foi lançado em ${lancamento3} e completa ${periodo3} anos em 2022!`
+      )
+    </script>
+  </body>
+</html>
